@@ -1,5 +1,5 @@
 describe('Login', function () {
-    describe('Merchant user login', function () {
+    describe('When merchant user try to login', function () {
         it('should not login with incorrect email', function (done) {
             chai.request(app)
                 .post('/sessions')
