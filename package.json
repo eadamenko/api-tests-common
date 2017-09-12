@@ -7,7 +7,8 @@
     "test": "mocha",
     "test-to-xml": "mocha --reporter mocha-junit-reporter --reporter-options mochaFile=./reports/mocha.xml",
     "test-allure": "mocha --reporter mocha-allure-reporter",
-    "report-allure": "npm run test-allure; allure generate allure-results --clean -o allure-report"
+    "report-allure": "npm run test-allure; allure generate allure-results --clean -o allure-report",
+    "test-multi": "MOCHA_FILE=./reports/mocha.xml mocha -R mocha-multi --reporter-options list=-,mocha-junit-reporter=-,mocha-allure-reporter=-"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "expect": "latest",
     "mocha-allure-reporter": "^1.3.2",
     "mocha-junit-reporter": "^1.13.0",
+    "mocha-multi": "^0.11.0",
     "request": "^2.81.0"
   }
 }
