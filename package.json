@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "mocha",
-    "test-to-xml": "mocha --reporter mocha-junit-reporter --reporter-options mochaFile=./reports/mocha.xml"
+    "test-to-xml": "mocha --reporter mocha-junit-reporter --reporter-options mochaFile=./reports/mocha.xml",
+    "test-allure": "mocha --reporter mocha-allure-reporter",
+    "report-allure": "npm run test-allure; allure generate allure-results --clean -o allure-report"
   },
   "repository": {
     "type": "git",
@@ -20,9 +22,11 @@
     "mocha-junit-reporter": "^1.13.0"
   },
   "dependencies": {
+    "allure-commandline": "^2.3.5",
     "dotenv": "^4.0.0",
-    "request": "^2.81.0",
     "expect": "latest",
-    "mocha-junit-reporter": "^1.13.0"
+    "mocha-allure-reporter": "^1.3.2",
+    "mocha-junit-reporter": "^1.13.0",
+    "request": "^2.81.0"
   }
 }
