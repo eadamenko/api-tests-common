@@ -5,10 +5,10 @@
   "main": "app.js",
   "scripts": {
     "test": "mocha",
-    "test-to-xml": "mocha --reporter mocha-junit-reporter --reporter-options mochaFile=./reports/mocha.xml",
-    "test-allure": "mocha --reporter mocha-allure-reporter",
+    "test-to-xml": "mocha --reporter mocha-junit-reporter --reporter-options mochaFile=./reports/mocha.xml || exit 0",
+    "test-allure": "mocha --reporter mocha-allure-reporter || exit 0",
     "report-allure": "npm run test-allure; allure generate allure-results --clean -o allure-report",
-    "test-multi": "MOCHA_FILE=./reports/mocha.xml mocha -R mocha-multi --reporter-options list=-,mocha-junit-reporter=-,mocha-allure-reporter=-"
+    "test-multi": "MOCHA_FILE=./reports/mocha.xml mocha -R mocha-multi --reporter-options spec=-,mocha-junit-reporter=-,mocha-allure-reporter=- || exit 0"
   },
   "repository": {
     "type": "git",
