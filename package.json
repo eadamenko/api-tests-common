@@ -1,0 +1,25 @@
+{
+  "name": "api_tests_fw_v2",
+  "version": "1.0.0",
+  "description": "API tests for FW v2.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.isdev.info:FutureWorld/api-tests-fw2.0.git"
+  },
+  "author": "eugene.adamenko",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.5.0"
+  },
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "request": "^2.81.0",
+    "expect": "latest"
+  }
+}
