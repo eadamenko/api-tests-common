@@ -31,7 +31,7 @@ describe('Login', function () {
                 });
         });
 
-        it('should not login with incorrect role/usertype', function (done) {
+        it('should not login with incorrect usertype', function (done) {
             chai.request(app)
                 .post('/sessions')
                 .send({
