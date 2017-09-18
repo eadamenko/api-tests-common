@@ -11,7 +11,7 @@ describe('Login', function () {
                 })
                 .end(function (err, res) {
                     res.should.have.status(401);
-                    res.body.should.have.property('message').equal('Invalid credential');
+                    res.body.should.have.property('message', 'Invalid credential');
                     done();
                 });
         });
@@ -26,7 +26,7 @@ describe('Login', function () {
                 })
                 .end(function (err, res) {
                     res.should.have.status(401);
-                    res.body.should.have.property('message').equal('Invalid credential');
+                    res.body.should.have.property('message', 'Invalid credential');
                     done();
                 });
         });
@@ -41,7 +41,7 @@ describe('Login', function () {
                 })
                 .end(function (err, res) {
                     res.should.have.status(401);
-                    res.body.should.have.property('message').equal('Invalid credential');
+                    res.body.should.have.property('message', 'Invalid credential');
                     done();
                 });
         });
@@ -56,7 +56,7 @@ describe('Login', function () {
                 })
                 .end(function (err, res) {
                     res.should.have.status(422);
-                    res.body.should.have.property('message').equal('Invalid data in request body');
+                    res.body.should.have.property('message', 'Invalid data in request body');
                     res.body.should.have.property('errors');
                     done();
                 });
@@ -73,6 +73,7 @@ describe('Login', function () {
                 .end(function (err, res) {
                     res.should.have.status(201);
                     res.body.data.should.have.property('token').not.equal(null);
+                    res.body.data.user.should.have.property('name').to.be.a('string');
                     done();
                 });
         });

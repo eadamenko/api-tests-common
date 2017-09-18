@@ -5,7 +5,7 @@ describe('Validate Email', function () {
                 .post('/validate/email') //empty email
                 .end(function (err, res) {
                     res.should.have.status(422);
-                    res.body.should.have.property('message').equal('Invalid data in request body');
+                    res.body.should.have.property('message', 'Invalid data in request body');
                     res.body.should.have.property('errors');
                     done();
                 })
@@ -19,7 +19,7 @@ describe('Validate Email', function () {
                 })
                 .end(function (err, res) {
                     res.should.have.status(422);
-                    res.body.should.have.property('message').equal('Invalid data in request body');
+                    res.body.should.have.property('message', 'Invalid data in request body');
                     res.body.should.have.property('errors');
                     done();
                 })
@@ -33,7 +33,7 @@ describe('Validate Email', function () {
                 })
                 .end(function (err, res) {
                     res.should.have.status(409);
-                    res.body.should.have.property('message').equal('An account with this email address already exists');
+                    res.body.should.have.property('message', 'An account with this email address already exists');
                     done();
                 })
         });

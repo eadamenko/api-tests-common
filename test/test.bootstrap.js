@@ -3,7 +3,7 @@ process.env.NODE_ENV='test'; // any more test specific init code
 global.chai = require('chai');
 global.chaiHttp = require('chai-http');
 global.should  = chai.should();
-global.expect = chai.expect();
+global.expect = chai.expect;
 global.faker = require('faker');
 
 require('dotenv').config();
