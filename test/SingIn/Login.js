@@ -13,7 +13,7 @@ describe('Login', function () {
                     res.should.have.status(401);
                     res.body.should.have.property('message', 'Invalid credential');
                     done();
-                });
+                })
         });
 
         it('should not login with invalid password', function (done) {
@@ -28,7 +28,7 @@ describe('Login', function () {
                     res.should.have.status(401);
                     res.body.should.have.property('message', 'Invalid credential');
                     done();
-                });
+                })
         });
 
         it('should not login with invalid usertype', function (done) {
@@ -43,7 +43,7 @@ describe('Login', function () {
                     res.should.have.status(401);
                     res.body.should.have.property('message', 'Invalid credential');
                     done();
-                });
+                })
         });
 
         it('should be an error if field with invalid request payload', function (done) {
@@ -59,7 +59,7 @@ describe('Login', function () {
                     res.body.should.have.property('message', 'Invalid data in request body');
                     res.body.should.have.property('errors');
                     done();
-                });
+                })
         });
 
         it('should login', function (done) {
@@ -75,7 +75,7 @@ describe('Login', function () {
                     res.body.data.should.have.property('token').not.equal(null);
                     res.body.data.user.should.have.property('name').to.be.a('string');
                     done();
-                });
+                })
         });
 
     });
