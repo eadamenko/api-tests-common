@@ -12,7 +12,7 @@ describe('Get list of kingdom', function () {
                    res.body.data[0].should.have.property('population').to.be.a('number');
                    res.body.data[0].should.have.property('total_consumption').to.be.a('number');
                    done();
-               })
+               });
         });
     });
 

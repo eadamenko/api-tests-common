@@ -8,7 +8,7 @@ describe('Validate Email', function () {
                     res.body.should.have.property('message', 'Invalid data in request body');
                     res.body.should.have.property('errors');
                     done();
-                })
+                });
         });
 
         it('should be an error if invalid request payload', function (done) {
@@ -22,7 +22,7 @@ describe('Validate Email', function () {
                     res.body.should.have.property('message', 'Invalid data in request body');
                     res.body.should.have.property('errors');
                     done();
-                })
+                });
         });
 
         it('should be an error if account with such email already exist', function (done) {
@@ -35,7 +35,7 @@ describe('Validate Email', function () {
                     res.should.have.status(409);
                     res.body.should.have.property('message', 'An account with this email address already exists');
                     done();
-                })
+                });
         });
 
         it('should allow unique email', function (done) {
@@ -47,7 +47,7 @@ describe('Validate Email', function () {
                 .end(function (err, res) {
                     res.should.have.status(200);
                     done();
-                })
+                });
         });
     });
 
