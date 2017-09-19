@@ -7,7 +7,7 @@ describe('Get introducer info', function () {
                     res.should.have.status(422);
                     res.body.should.have.property('message', 'Email or Ref is required field');
                     done();
-                })
+                });
         });
 
         it('should be an error if there is no introducer with such email registered', function (done) {
@@ -17,7 +17,7 @@ describe('Get introducer info', function () {
                     res.should.have.status(404);
                     res.body.should.have.property('message', 'An account with this email address does not exist. Please check and correct your data.');
                     done();
-                })
+                });
         });
 
         it('should validate introducer', function (done) {
@@ -35,7 +35,7 @@ describe('Get introducer info', function () {
                     res.body.data.kingdom.should.have.property('total_consumption').to.be.a('number');
                     res.body.data.kingdom.should.have.property('population').to.be.a('number');
                     done();
-                })
+                });
         });
     });
 

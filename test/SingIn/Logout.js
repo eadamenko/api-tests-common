@@ -6,7 +6,7 @@ describe('Logout', function () {
            .end(function (err, res) {
                res.should.have.status(204);
                done();
-           })
+           });
     });
 
 });
