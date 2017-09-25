@@ -17,6 +17,25 @@ emailAdmin = process.env.LOGIN_AMDIN;
 passAdmin = process.env.PASS_ADMIN;
 
 
+before(function () {
+    describe('get bearer Token', function () {
+        it('get merchant token', function (done) {
+            chai.request(app)
+                .post('/sessions')
+                .send({
+                    email: emailMerchant,
+                    password: passMerchant,
+                    usertype: '2',
+                })
+                .end(function (err, res) {
+                    res.should.have.status(201);
+                    var merchantToken = res.body.data.token;
+                    return merchantToken;
+                    done();
+                });
+        });
+    });
 
+});
 
 
