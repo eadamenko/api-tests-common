@@ -4,13 +4,13 @@ describe('Get list of kingdom', function () {
            chai.request(app)
                .get('/kingdoms')
                .end(function (err, res) {
-                   res.should.have.status(200);
-                   res.body.data[0].should.have.property('id').to.be.a('number');
-                   res.body.data[0].should.have.property('name').to.be.a('string');
-                   res.body.data[0].should.have.property('king_name').to.be.a('string');
-                   res.body.data[0].should.have.property('icon').to.be.a('string');
-                   res.body.data[0].should.have.property('population').to.be.a('number');
-                   res.body.data[0].should.have.property('total_consumption').to.be.a('number');
+                   expect(res).to.have.status(200);
+                   expect(res.body.data[0]).to.have.property('id').to.be.a('number');
+                   expect(res.body.data[0]).to.have.property('name').to.be.a('string');
+                   expect(res.body.data[0]).to.have.property('king_name').to.be.a('string');
+                   expect(res.body.data[0]).to.have.property('icon').to.be.a('string');
+                   expect(res.body.data[0]).to.have.property('population').to.be.a('number');
+                   expect(res.body.data[0]).to.have.property('total_consumption').to.be.a('number');
                    done();
                });
         });

@@ -4,9 +4,9 @@ describe('Validate Email', function () {
             chai.request(app)
                 .post('/validate/email') //empty email
                 .end(function (err, res) {
-                    res.should.have.status(422);
-                    res.body.should.have.property('message', 'Invalid data in request body');
-                    res.body.should.have.property('errors');
+                    expect(res).to.have.status(422);
+                    expect(res.body).to.have.property('message', 'Invalid data in request body');
+                    expect(res.body).to.have.property('errors');
                     done();
                 });
         });
@@ -18,9 +18,9 @@ describe('Validate Email', function () {
                     emaill: 'someemail@example.com' //invalid field name
                 })
                 .end(function (err, res) {
-                    res.should.have.status(422);
-                    res.body.should.have.property('message', 'Invalid data in request body');
-                    res.body.should.have.property('errors');
+                    expect(res).to.have.status(422);
+                    expect(res.body).to.have.property('message', 'Invalid data in request body');
+                    expect(res.body).to.have.property('errors');
                     done();
                 });
         });
@@ -32,8 +32,8 @@ describe('Validate Email', function () {
                     email: emailMerchant //email already exist
                 })
                 .end(function (err, res) {
-                    res.should.have.status(409);
-                    res.body.should.have.property('message', 'An account with this email address already exists');
+                    expect(res).to.have.status(409);
+                    expect(res.body).to.have.property('message', 'An account with this email address already exists');
                     done();
                 });
         });
@@ -45,7 +45,7 @@ describe('Validate Email', function () {
                     email: faker.internet.email()  //unique email
                 })
                 .end(function (err, res) {
-                    res.should.have.status(200);
+                    expect(res).to.have.status(200);
                     done();
                 });
         });

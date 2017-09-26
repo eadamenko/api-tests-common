@@ -10,8 +10,8 @@ describe('Login', function () {
 
                 })
                 .end(function (err, res) {
-                    res.should.have.status(401);
-                    res.body.should.have.property('message', 'Invalid credential');
+                    expect(res).to.have.status(401);
+                    expect(res.body).to.have.property('message', 'Incorrect credential');
                     done();
                 });
         });
@@ -25,8 +25,8 @@ describe('Login', function () {
                     usertype: '2',
                 })
                 .end(function (err, res) {
-                    res.should.have.status(401);
-                    res.body.should.have.property('message', 'Invalid credential');
+                    expect(res).to.have.status(401);
+                    expect(res.body).to.have.property('message', 'Incorrect credential');
                     done();
                 });
         });
@@ -40,8 +40,8 @@ describe('Login', function () {
                     usertype: '2', //this user have usertype 3
                 })
                 .end(function (err, res) {
-                    res.should.have.status(401);
-                    res.body.should.have.property('message', 'Invalid credential');
+                    expect(res).to.have.status(401);
+                    expect(res.body).to.have.property('message', 'Incorrect credential');
                     done();
                 });
         });
@@ -55,9 +55,9 @@ describe('Login', function () {
                     usertype: '2',
                 })
                 .end(function (err, res) {
-                    res.should.have.status(422);
-                    res.body.should.have.property('message', 'Invalid data in request body');
-                    res.body.should.have.property('errors');
+                    expect(res).to.have.status(422);
+                    expect(res.body).to.have.property('message', 'Invalid data in request body');
+                    expect(res.body).to.have.property('errors');
                     done();
                 });
         });
@@ -71,9 +71,9 @@ describe('Login', function () {
                     usertype: '2',
                 })
                 .end(function (err, res) {
-                    res.should.have.status(201);
-                    res.body.data.should.have.property('token').not.equal(null);
-                    res.body.data.user.should.have.property('name').to.be.a('string');
+                    expect(res).to.have.status(201);
+                    expect(res.body.data).to.have.property('token').not.equal(null);
+                    expect(res.body.data.user).to.have.property('name').to.be.a('string');
                     done();
                 });
         });

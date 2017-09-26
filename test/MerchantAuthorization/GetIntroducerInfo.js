@@ -4,8 +4,8 @@ describe('Get introducer info', function () {
             chai.request(app)
                 .get('/validate/introducer?email=')
                 .end(function (err, res) {
-                    res.should.have.status(422);
-                    res.body.should.have.property('message', 'Email or Ref is required field');
+                    expect(res).to.have.status(422);
+                    expect(res.body).to.have.property('message', 'Email or Ref is required field');
                     done();
                 });
         });
@@ -14,8 +14,8 @@ describe('Get introducer info', function () {
             chai.request(app)
                 .get('/validate/introducer?email=' + 'invalidemail@example.com')
                 .end(function (err, res) {
-                    res.should.have.status(404);
-                    res.body.should.have.property('message', 'An account with this email address does not exist. Please check and correct your data.');
+                    expect(res).to.have.status(404);
+                    expect(res.body).to.have.property('message', 'An account with this email address does not exist. Please check and correct your data.');
                     done();
                 });
         });
@@ -24,16 +24,16 @@ describe('Get introducer info', function () {
             chai.request(app)
                 .get('/validate/introducer?email=' + 'testuser1@example.com')
                 .end(function (err, res) {
-                    res.should.have.status(200);
-                    res.body.data.should.have.property('email', 'testuser1@example.com');
-                    res.body.data.should.have.property('nickname').to.be.a('string');
-                    res.body.data.should.have.property('id').to.be.a('number');
-                    res.body.data.kingdom.should.have.property('id').to.be.a('number');
-                    res.body.data.kingdom.should.have.property('name').to.be.a('string');
-                    res.body.data.kingdom.should.have.property('king_name').to.be.a('string');
-                    res.body.data.kingdom.should.have.property('icon').to.be.a('string');
-                    res.body.data.kingdom.should.have.property('total_consumption').to.be.a('number');
-                    res.body.data.kingdom.should.have.property('population').to.be.a('number');
+                    expect(res).to.have.status(200);
+                    expect(res.body.data).to.have.property('email', 'testuser1@example.com');
+                    expect(res.body.data).to.have.property('nickname').to.be.a('string');
+                    expect(res.body.data).to.have.property('id').to.be.a('number');
+                    expect(res.body.data.kingdom).to.have.property('id').to.be.a('number');
+                    expect(res.body.data.kingdom).to.have.property('name').to.be.a('string');
+                    expect(res.body.data.kingdom).to.have.property('king_name').to.be.a('string');
+                    expect(res.body.data.kingdom).to.have.property('icon').to.be.a('string');
+                    expect(res.body.data.kingdom).to.have.property('total_consumption').to.be.a('number');
+                    expect(res.body.data.kingdom).to.have.property('population').to.be.a('number');
                     done();
                 });
         });

@@ -5,7 +5,7 @@ describe('Get merchant GLP balance', function () {
                 .get('/merchants/balance/glp')
                     //no token sended
                 .end(function (err, res) {
-                    res.should.have.status(404);
+                    expect(res).to.have.status(404);
                     done();
                 });
         });
@@ -14,11 +14,9 @@ describe('Get merchant GLP balance', function () {
         it('should get merchant balance', function (done) {
             chai.request(app)
                 .get('/merchants/balance/glp')
-                .send({
-                    merchantToken
-                })
+                .set('X-Authorization', 'Bearer' + tokenMerchant)
                 .end(function (err, res) {
-                    res.should.have.status(200);
+                    expect(res).to.have.status(200);
                     res.body.data.should.have.property('balance').to.be.a('number');
                     done();
                 });

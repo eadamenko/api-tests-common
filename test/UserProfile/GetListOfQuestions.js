@@ -4,13 +4,13 @@ describe('Get List Of Questions', function () {
             chai.request(app)
                 .get('/questions')
                 .end(function (err, res) {
-                    res.should.have.status(200);
-                    res.body.data.group1[0].should.have.property('id').to.be.a('number');
-                    res.body.data.group1[0].should.have.property('statement').to.be.a('string');
-                    res.body.data.group2[0].should.have.property('id').to.be.a('number');
-                    res.body.data.group2[0].should.have.property('statement').to.be.a('string');
-                    res.body.data.group3[0].should.have.property('id').to.be.a('number');
-                    res.body.data.group3[0].should.have.property('statement').to.be.a('string');
+                    expect(res).to.have.status(200);
+                    expect(res.body.data.group1[0]).to.have.property('id').to.be.a('number');
+                    expect(res.body.data.group1[0]).to.have.property('statement').to.be.a('string');
+                    expect(res.body.data.group2[0]).to.have.property('id').to.be.a('number');
+                    expect(res.body.data.group2[0]).to.have.property('statement').to.be.a('string');
+                    expect(res.body.data.group3[0]).to.have.property('id').to.be.a('number');
+                    expect(res.body.data.group3[0]).to.have.property('statement').to.be.a('string');
                     done();
                 });
         });
