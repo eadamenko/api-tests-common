@@ -11,7 +11,7 @@ describe('Login', function () {
                 })
                 .end(function (err, res) {
                     res.should.have.status(401);
-                    res.body.should.have.property('message', 'Invalid credential');
+                    res.body.should.have.property('message', 'Incorrect credential');
                     done();
                 });
         });
@@ -26,7 +26,7 @@ describe('Login', function () {
                 })
                 .end(function (err, res) {
                     res.should.have.status(401);
-                    res.body.should.have.property('message', 'Invalid credential');
+                    res.body.should.have.property('message', 'Incorrect credential');
                     done();
                 });
         });
@@ -41,7 +41,7 @@ describe('Login', function () {
                 })
                 .end(function (err, res) {
                     res.should.have.status(401);
-                    res.body.should.have.property('message', 'Invalid credential');
+                    res.body.should.have.property('message', 'Incorrect credential');
                     done();
                 });
         });
