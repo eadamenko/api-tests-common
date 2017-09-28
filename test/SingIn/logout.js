@@ -4,7 +4,7 @@ describe('Logout', function () {
            .del('/logout')
            .send({})
            .end(function (err, res) {
-               res.should.have.status(204);
+               expect(res).to.have.status(204);
                done();
            });
     });
