@@ -16,21 +16,5 @@ emailAdmin = process.env.LOGIN_ADMIN;
 passAdmin = process.env.PASS_ADMIN;
 
 
-tokenMerchant = (
-    function tokenMerchant() {
-            chai.request(app)
-                .post('/sessions')
-                .send({
-                    email: emailMerchant,
-                    password: passMerchant,
-                    usertype: '2',
-                })
-                .end(function (err, res) {
-                    res.should.have.status(201);
-                    console.log(res.body.data.token);
-                });
-        return res.body.data.token;
-});
-
 
 

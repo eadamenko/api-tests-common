@@ -11,7 +11,7 @@ describe('Login', function () {
                 })
                 .end(function (err, res) {
                     expect(res).to.have.status(401);
-                    expect(res.body).to.have.property('message', 'Incorrect credential');
+                    expect(res.body).to.have.property('message', 'Wrong email or password');
                     done();
                 });
         });
@@ -26,7 +26,7 @@ describe('Login', function () {
                 })
                 .end(function (err, res) {
                     expect(res).to.have.status(401);
-                    expect(res.body).to.have.property('message', 'Incorrect credential');
+                    expect(res.body).to.have.property('message', 'Wrong email or password');
                     done();
                 });
         });
@@ -41,7 +41,7 @@ describe('Login', function () {
                 })
                 .end(function (err, res) {
                     expect(res).to.have.status(401);
-                    expect(res.body).to.have.property('message', 'Incorrect credential');
+                    expect(res.body).to.have.property('message', 'Wrong email or password');
                     done();
                 });
         });
