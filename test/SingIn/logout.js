@@ -1,4 +1,4 @@
-describe('Logout', function () {
+describe('Logout |', function () {
 
     let url = '/logout';
 

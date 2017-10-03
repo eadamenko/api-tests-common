@@ -1,8 +1,8 @@
-describe('Get introducer info', function () {
+describe('Get introducer info |', function () {
 
     let url = '/validate/introducer?email=';
 
-    describe('When new user register he choose his introducer', function () {
+    describe('When new user register he choose his introducer |', function () {
         it('should be an error if there is no introducer email', function (done) {
             chai.request(app)
                 .get(url)
