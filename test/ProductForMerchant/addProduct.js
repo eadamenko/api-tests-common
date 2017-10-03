@@ -1,10 +1,10 @@
-describe('Add Product', function () {
+describe('Add Product |', function () {
 
     require('../../ApiHelper/getMerhantToken');
     require('../../ApiHelper/getCustomerToken');
     let url = '/merchant/me/product';
 
-    describe('When merchant add product', function () {
+    describe('When merchant add product |', function () {
         it('should be an error if invalid request payload', function (done) {
             chai.request(app)
                 .post(url)
