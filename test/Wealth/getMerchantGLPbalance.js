@@ -1,9 +1,9 @@
-describe('Get merchant GLP balance', function () {
+describe('Get merchant GLP balance |', function () {
 
     require('../../ApiHelper/getMerhantToken');
     let url = '/merchant/balance/glp';
 
-    describe('When user logged in he can see his GLP balance on dashboard', function () {
+    describe('When user logged in he can see his GLP balance on dashboard |', function () {
         it('should be an error if there is no token', function (done) {
             chai.request(app)
                 .get(url)

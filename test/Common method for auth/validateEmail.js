@@ -1,8 +1,8 @@
-describe('Validate Email', function () {
+describe('Validate Email |', function () {
 
     let url = '/validate/email';
 
-    describe('When new user submit registration form', function () {
+    describe('When new user submit registration form |', function () {
         it('should be an error if email field not sended', function (done) {
             chai.request(app)
                 .post(url) //empty email
@@ -18,7 +18,7 @@ describe('Validate Email', function () {
             chai.request(app)
                 .post(url)
                 .send({
-                    emaill: 'someemail@example.com' //invalid field name
+                    //invalid request payload
                 })
                 .end(function (err, res) {
                     expect(res).to.have.status(422);

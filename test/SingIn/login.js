@@ -1,8 +1,8 @@
-describe('Login', function () {
+describe('Login |', function () {
 
     let url = '/sessions';
 
-    describe('When merchant user try to login', function () {
+    describe('When merchant user try to login |', function () {
         it('should not login with invalid email', function (done) {
             chai.request(app)
                 .post(url)
@@ -53,9 +53,7 @@ describe('Login', function () {
             chai.request(app)
                 .post(url)
                 .send({
-                    emaill: emailAdmin, //invalid field name
-                    password: passAdmin,
-                    usertype: '2',
+                    // invalid request payload
                 })
                 .end(function (err, res) {
                     expect(res).to.have.status(422);
