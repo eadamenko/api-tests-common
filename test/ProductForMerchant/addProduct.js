@@ -16,8 +16,7 @@ describe('Add Product |', function () {
                     expect(res).to.have.status(422);
                     expect(res.body).to.have.property('message', 'Invalid data in request body');
                     done();
-                })
-
+                });
         });
 
         it('should be an error if token is invalid', function (done) {
@@ -44,8 +43,7 @@ describe('Add Product |', function () {
                     expect(res).to.have.status(403);
                     expect(res.body).to.have.property('message', 'Expression \"has_role(\'ROLE_MERCHANT\')\" denied access.');
                     done();
-                })
-
+                });
         });
 
         it('should add a product', function (done) {
@@ -84,14 +82,9 @@ describe('Add Product |', function () {
                     expect(res.body.data).to.have.property('rating').to.be.a('number');
                     expect(res.body.data).to.have.property('sold').to.be.a('number');
                     expect(res.body.data).to.have.property('published');
-
-
                     done();
                 });
-
         });
-
-
     });
 
 });
