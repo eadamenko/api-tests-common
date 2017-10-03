@@ -1,8 +1,9 @@
 describe('Login', function () {
+    let url = '/sessions';
     describe('When merchant user try to login', function () {
         it('should not login with invalid email', function (done) {
             chai.request(app)
-                .post('/sessions')
+                .post(url)
                 .send({
                     email: 'merchant1@example.comm', //invalid email
                     password: passMerchant,
@@ -18,7 +19,7 @@ describe('Login', function () {
 
         it('should not login with invalid password', function (done) {
             chai.request(app)
-                .post('/sessions')
+                .post(url)
                 .send({
                     email: emailMerchant,
                     password: '1234567', //invalid pass
@@ -33,7 +34,7 @@ describe('Login', function () {
 
         it('should not login with invalid usertype', function (done) {
             chai.request(app)
-                .post('/sessions')
+                .post(url)
                 .send({
                     email: emailAdmin,
                     password: passAdmin,
@@ -48,7 +49,7 @@ describe('Login', function () {
 
         it('should be an error if field with invalid request payload', function (done) {
             chai.request(app)
-                .post('/sessions')
+                .post(url)
                 .send({
                     emaill: emailAdmin, //invalid field name
                     password: passAdmin,
@@ -64,7 +65,7 @@ describe('Login', function () {
 
         it('should login', function (done) {
             chai.request(app)
-                .post('/sessions')
+                .post(url)
                 .send({
                     email: emailMerchant,
                     password: passMerchant,

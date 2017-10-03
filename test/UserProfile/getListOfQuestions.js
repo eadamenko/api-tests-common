@@ -1,8 +1,9 @@
 describe('Get List Of Questions', function () {
+    let url = '/questions';
     describe('When new user submit registration form in next step he can see Security Questions', function () {
         it('should be the list of questions', function (done) {
             chai.request(app)
-                .get('/questions')
+                .get(url)
                 .end(function (err, res) {
                     expect(res).to.have.status(200);
                     expect(res.body.data.group1[0]).to.have.property('id').to.be.a('number');

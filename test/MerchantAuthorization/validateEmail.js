@@ -1,8 +1,9 @@
 describe('Validate Email', function () {
+    let url = '/validate/email';
     describe('When new user submit registration form', function () {
         it('should be an error if email field not sended', function (done) {
             chai.request(app)
-                .post('/validate/email') //empty email
+                .post(url) //empty email
                 .end(function (err, res) {
                     expect(res).to.have.status(422);
                     expect(res.body).to.have.property('message', 'Invalid data in request body');
@@ -13,7 +14,7 @@ describe('Validate Email', function () {
 
         it('should be an error if invalid request payload', function (done) {
             chai.request(app)
-                .post('/validate/email')
+                .post(url)
                 .send({
                     emaill: 'someemail@example.com' //invalid field name
                 })
@@ -27,7 +28,7 @@ describe('Validate Email', function () {
 
         it('should be an error if account with such email already exist', function (done) {
             chai.request(app)
-                .post('/validate/email')
+                .post(url)
                 .send({
                     email: emailMerchant //email already exist
                 })
@@ -40,7 +41,7 @@ describe('Validate Email', function () {
 
         it('should allow unique email', function (done) {
             chai.request(app)
-                .post('/validate/email')
+                .post(url)
                 .send({
                     email: faker.internet.email()  //unique email
                 })

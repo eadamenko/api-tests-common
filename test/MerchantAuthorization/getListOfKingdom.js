@@ -1,8 +1,9 @@
 describe('Get list of kingdom', function () {
+    let url = '/kingdoms';
     describe('When new user register he choose country he want to join', function () {
         it('should be displayed the list of available kingdoms', function (done) {
            chai.request(app)
-               .get('/kingdoms')
+               .get(url)
                .end(function (err, res) {
                    expect(res).to.have.status(200);
                    expect(res.body.data[0]).to.have.property('id').to.be.a('number');

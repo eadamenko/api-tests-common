@@ -1,8 +1,9 @@
 describe('Get merchant GLP balance', function () {
+    let url = '/merchant/balance/glp';
     describe('When user logged in he can see his GLP balance on dashboard', function () {
         it('should be an error if there is no token', function (done) {
             chai.request(app)
-                .get('/merchant/balance/glp')
+                .get(url)
                     //no token sended
                 .end(function (err, res) {
                     expect(res).to.have.status(401);
@@ -13,7 +14,7 @@ describe('Get merchant GLP balance', function () {
 
         it('should be an error if token is invalid', function (done) {
             chai.request(app)
-                .get('/merchant/balance/glp')
+                .get(url)
                 .set('X-Authorization', 'Bearer ' + 'asdfasdfawf2323424wefsdfsf') //invalid token
                 .end(function (err, res) {
                     expect(res).to.have.status(401);
@@ -24,7 +25,7 @@ describe('Get merchant GLP balance', function () {
 
         it('should get merchant balance', function (done) {
             chai.request(app)
-                .get('/merchant/balance/glp')
+                .get(url)
                 .set('X-Authorization', 'Bearer ' + process.env.TOKEN_MERCHANT)
                 .end(function (err, res) {
                     expect(res).to.have.status(200);
