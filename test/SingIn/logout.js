@@ -1,5 +1,7 @@
 describe('Logout', function () {
+
     let url = '/logout';
+
     it('should logout', function (done) {
        chai.request(app)
            .del(url)

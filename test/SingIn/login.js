@@ -1,5 +1,7 @@
 describe('Login', function () {
+
     let url = '/sessions';
+
     describe('When merchant user try to login', function () {
         it('should not login with invalid email', function (done) {
             chai.request(app)

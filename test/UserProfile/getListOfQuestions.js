@@ -1,5 +1,7 @@
 describe('Get List Of Questions', function () {
+
     let url = '/questions';
+
     describe('When new user submit registration form in next step he can see Security Questions', function () {
         it('should be the list of questions', function (done) {
             chai.request(app)

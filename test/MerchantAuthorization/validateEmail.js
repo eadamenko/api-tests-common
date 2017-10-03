@@ -1,5 +1,7 @@
 describe('Validate Email', function () {
+
     let url = '/validate/email';
+
     describe('When new user submit registration form', function () {
         it('should be an error if email field not sended', function (done) {
             chai.request(app)
