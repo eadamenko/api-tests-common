@@ -1,5 +1,7 @@
 describe('Get introducer info', function () {
+
     let url = '/validate/introducer?email=';
+
     describe('When new user register he choose his introducer', function () {
         it('should be an error if there is no introducer email', function (done) {
             chai.request(app)
@@ -13,7 +15,7 @@ describe('Get introducer info', function () {
 
         it('should be an error if there is no introducer with such email registered', function (done) {
             chai.request(app)
-                .get(url + 'invalidemail@example.com')
+                .get(url + 'invalidemail@example.com') //invalid email
                 .end(function (err, res) {
                     expect(res).to.have.status(404);
                     expect(res.body).to.have.property('message', 'An account with this email address does not exist. Please check and correct your data.');

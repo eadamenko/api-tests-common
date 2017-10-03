@@ -1,5 +1,7 @@
 describe('Get list of kingdom', function () {
+
     let url = '/kingdoms';
+
     describe('When new user register he choose country he want to join', function () {
         it('should be displayed the list of available kingdoms', function (done) {
            chai.request(app)
