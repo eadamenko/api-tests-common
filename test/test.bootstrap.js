@@ -12,6 +12,8 @@ chai.use(chaiHttp);
 app = process.env.API_URL;
 emailMerchant = process.env.LOGIN_MERCHANT;
 passMerchant = process.env.PASS_MERCHANT;
+emailCustomer = process.env.LOGIN_CUSTOMER;
+passCustomer = process.env.PASS_CUSTOMER;
 emailAdmin = process.env.LOGIN_ADMIN;
 passAdmin = process.env.PASS_ADMIN;
 
