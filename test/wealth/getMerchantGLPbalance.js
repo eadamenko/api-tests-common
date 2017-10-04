@@ -1,6 +1,6 @@
 describe('Get merchant GLP balance |', function () {
 
-    require('../../ApiHelper/getMerhantToken');
+    require('../../apiHelper/getMerhantToken');
     let url = '/merchant/balance/glp';
 
     describe('When user logged in he can see his GLP balance on dashboard |', function () {
