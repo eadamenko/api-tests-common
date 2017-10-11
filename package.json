@@ -1,7 +1,7 @@
 {
-  "name": "api_tests_fw_v2",
+  "name": "api_tests_common",
   "version": "1.0.0",
-  "description": "API tests for FW v2.0",
+  "description": "API tests common",
   "main": "app.js",
   "scripts": {
     "test": "mocha",
@@ -12,24 +12,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.isdev.info:FutureWorld/api-tests-fw2.0.git"
+    "url": "git@gitlab.isdev.info:FutureWorld/api-tests-common.git"
   },
   "author": "eugene.adamenko",
   "license": "ISC",
   "devDependencies": {
-    "chai": "^4.1.2",
-    "chai-http": "^3.0.0",
-    "mocha": "^3.5.0",
-    "mocha-junit-reporter": "^1.13.0"
+
   },
   "dependencies": {
-    "allure-commandline": "^2.3.5",
-    "dotenv": "^4.0.0",
+    "allure-commandline": "2.3.5",
+    "dotenv": "4.0.0",
     "expect": "latest",
-    "faker": "^4.1.0",
-    "mocha-allure-reporter": "^1.3.2",
-    "mocha-junit-reporter": "^1.13.0",
-    "mocha-multi": "^0.11.0",
-    "request": "^2.81.0"
+    "faker": "4.1.0",
+    "mocha-allure-reporter": "1.3.2",
+    "mocha-junit-reporter": "1.13.0",
+    "mocha-multi": "0.11.0",
+    "request": "2.81.0",
+    "chai": "4.1.2",
+    "chai-http": "3.0.0",
+    "mocha": "3.5.0"
   }
 }
